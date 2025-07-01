@@ -80,6 +80,32 @@ document.querySelector('.fa-solid.fa-caret-down').addEventListener('click',()=>{
     }
 })
 
+let dark = 0;
+document.getElementById('circle').addEventListener('click',()=>{
+    if(dark === 0)
+    {
+        document.getElementById('circle').classList.toggle('animate');
+        document.getElementById('mode-text').innerText = 'Dark Mode : On'
+        document.getElementById('mode-text').style.color = 'white';
+        dark = 1;
+        document.body.style.backgroundColor = '#222831';
+        document.querySelectorAll('input').forEach(input => {
+            input.style.backgroundColor = '#222831';
+          });
+    }
+    else
+    {
+        document.getElementById('circle').classList.toggle('animate');
+        document.getElementById('mode-text').innerText = 'Dark Mode : Off'
+        dark = 0;
+        document.body.style.backgroundColor = 'white';
+        document.getElementById('mode-text').style.color = 'black';
+        document.querySelectorAll('input').forEach(input => {
+            input.style.backgroundColor = 'white';
+          });
+    }
+})
+
 add();
 list();
 menu();
