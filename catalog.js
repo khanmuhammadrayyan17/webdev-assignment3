@@ -63,6 +63,23 @@ function menu()
 
 }
 
+let open = 0;
+document.querySelector('.fa-solid.fa-caret-down').addEventListener('click',()=>{
+    let booksList = document.getElementById('books-list');
+    if(open === 0)
+    {
+        booksList.style.height = booksList.scrollHeight + 'px';
+        document.querySelector('.fa-solid.fa-caret-down').style.transform = 'rotate(180deg)';
+        open = 1;
+    }
+    else
+    {
+        document.querySelector('.fa-solid.fa-caret-down').style.transform = 'rotate(0deg)';
+        booksList.style.height = '0px';
+        open = 0;
+    }
+})
+
 add();
 list();
 menu();
